@@ -665,3 +665,7 @@ while running:
     else:
         print("Use either + - * / or % next time")
 ```
+# Типы и модель данных
+- [Типы и модель данных](./Unit2_Type.md).
+
+
