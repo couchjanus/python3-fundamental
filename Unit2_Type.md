@@ -589,6 +589,31 @@ a[-1]
 Для получения из списка некоторого подсписка в определенном диапазоне индексов, укажите начальный и конечный индекс в квадратных скобках, разделив их двоеточием.
 ```py
 a[1:4] 
+
+```
+### initialize a list, and copy this list without the last element using slicing.
+```py
+source_list = [8, 4, 7, 3, 6, 1, 9]
+new_list = source_list[:-1]
+print(source_list)
+print(new_list)
+``` 
+
+### Find Unique Elements of a List using For Loop
+```py
+myList = [9, 1, 5, 9, 4, 2, 7, 2, 9, 5, 3]
+uniqueList = []
+ 
+for item in myList :
+    itemExist = False
+    for x in uniqueList :
+        if x == item :
+            itemExist = True
+            break
+    if not itemExist :
+        uniqueList.append(item)
+
+print(uniqueList)
 ```
 ## Методы списков
 ### list.append(x)
@@ -598,6 +623,20 @@ a = [1, 2]
 a.append(3) 
 print(a) 
 ```
+
+### Append a list to another list – For Loop
+
+```py
+#initialize lists
+list1 = [6, 52, 74, 62]
+list2 = [85, 17, 81, 92]
+#append each item of list2 to list1
+for item in list2:
+    list1.append(item)
+#print the extended list
+print(list1)
+```
+
 ### list.extend(L)
 Расширяет существующий список за счет добавления всех элементов из списка L. Эквивалентно команде a[len(a):] = L.
 ```py
@@ -605,6 +644,16 @@ a = [1, 2]
 b = [3, 4] 
 a.extend(b) 
 print(a) 
+```
+### Extend a list
+```py
+#initialize lists
+list1 = [6, 52, 74, 62]
+list2 = [85, 17, 81, 92]
+#append the second list
+list1.extend(list2)
+#print resulting list
+print(list1)
 ```
 ### list.insert(i, x)
 Вставить элемент x в позицию i.  Первый аргумент – индекс элемента после которого будет вставлен элемент x.
@@ -615,6 +664,50 @@ print(a)
 
 a.insert(len(a), 9) 
 print(a) 
+```
+### Insert Item at Specified Index in List
+```py
+mylist = [21, 5, 8, 52, 21, 87, 52]
+item = 36
+index = 4
+
+#insert item in mylist at index
+mylist.insert(index, item)
+
+print(mylist)
+```
+### Insert Item at Start of List
+```py
+mylist = [21, 5, 8, 52, 21, 87, 52]
+item = 36
+index = 0 #1st position
+
+#insert item in mylist at index
+mylist.insert(index, item)
+
+print(mylist)
+```
+### Insert Item at End of List
+```py
+mylist = [21, 5, 8, 52, 21, 87, 52]
+item = 36
+index = len(mylist)
+
+#insert item in mylist at index
+mylist.insert(index, item)
+
+print(mylist)
+```
+### Insert Item with Index out of Bounds of List
+```py
+mylist = [21, 5, 8, 52, 21, 87, 52]
+item = 36
+index = 1000 #index out of bounds of list
+
+#insert item in mylist at index
+mylist.insert(index, item)
+
+print(mylist)
 ```
 ### list.remove(x)
 Удаляет первое вхождение элемента x из списка.
@@ -633,6 +726,14 @@ print(a.pop())
  
 print(a) 
 ```
+### make a copy of the list, and then remove the last element from list
+```py
+source_list = [8, 4, 7, 3, 6, 1, 9]
+new_list = source_list.copy()
+new_list.pop()
+print(source_list)
+print(new_list)
+```
 ### list.clear()
 Удаляет все элементы из списка. Эквивалентно del a[:].
 ```py
@@ -642,11 +743,62 @@ print(a)
 a.clear() 
 print(a) # []
 ```
+### Check if List is Empty
+```py
+myList = []
+if not myList:
+    print('The list is empty.')
+else:
+    print('The list is not empty.')
+```
+### Check if List is Empty using len()
+```py
+myList = []
+if (len(myList) == 0):
+    print('The list is empty.')
+else:
+    print('The list is not empty.')
+```
 ### list.index(x[, start[, end]])
 Возвращает индекс элемента.
 ```py
 a = [1, 2, 3, 4, 5] 
 a.index(4) 
+```
+### Find Index of Item in List – start, end
+```py
+mylist = [21, 8, 67, 52, 8, 21, 87]
+item = 8
+start=2
+end=7
+
+#search for the item
+index = mylist.index(item, start, end)
+
+print('The index of', item, 'in the list is:', index)
+
+```
+### Find Index of Item – Item has multiple occurrences in List
+```py
+mylist = [21, 5, 8, 52, 21, 87, 52]
+item = 52
+
+#search for the item
+index = mylist.index(item)
+
+print('The index of', item, 'in the list is:', index)
+```
+### Find Index of Item in List – Item not present
+```py
+mylist = [21, 5, 8, 52, 21, 87, 52]
+item = 67
+
+try:
+   #search for the item
+   index = mylist.index(item)
+   print('The index of', item, 'in the list is:', index)
+except ValueError:
+   print('item not present')
 ```
 ### list.count(x)
 Возвращает количество вхождений элемента x в список.
@@ -660,6 +812,49 @@ print(a.count(2))
 a = [1, 4, 2, 8, 1] 
 a.sort() 
 print(a) 
+```
+### Find the smallest number using sort() function
+```py
+# python program to find the smallest number
+
+# list
+a = [18, 52, 23, 41, 32]
+
+# sort the list, default is in ascending order
+a.sort()
+
+# smallest number
+smallest = a[0]
+
+# print the smallest number
+print("Smallest number is: ",smallest)
+```
+### Find the smallest number using min()
+```py
+# python program to find the smallest number
+
+# list of numbers
+a = [18, 52, 23, 41, 32]
+
+# find smallest number using min() function
+smallest = min(a)
+
+# print the smallest number
+print(f'Smallest number in the list is : {smallest}.')
+```
+### Find the smallest number using for loop
+```py
+a=[18, 52, 23, 41, 32]
+
+# smallest number
+smallest = a[0] if a else None
+
+# find smallest
+for i in a:
+   if i<smallest:
+      smallest=i
+
+print("Smallest element is: ", smallest)
 ```
 ### list.reverse()
 Изменяет порядок расположения элементов в списке на обратный.
@@ -678,5 +873,41 @@ print(b)
 b[0] = 8 
 print(a) 
 print(b) 
+
+```
+### Append a list to another list keeping a copy of original list
+```py
+#initialize lists
+list1 = [6, 52, 74, 62]
+list2 = [85, 17, 81, 92]
+#make of copy of list1
+result = list1.copy()
+#append the second list
+result.extend(list2)
+#print resulting list
+print(result)
+```
+
+
+## Check if List 1 Contains all Elements of List 2 using Nested For
+```py
+list_1 = ['a', 'b', 'c', 'd', 'e']
+list_2 = ['a', 'c', 'e']
+
+isPresent = True
+for x in list_2:
+    x_present = False
+    for y in list_1:
+        if x == y:
+            x_present = True
+            break
+    if not x_present:
+        isPresent = False
+        break
+
+if isPresent :
+    print("List 1 contains all elements of list 2.")
+else:
+    print("List 1 does not contain all elements of list 2.")
 
 ```
