@@ -37,5 +37,8 @@ Python – это полноценный, универсальный, язык �
 # Функции Python
 - [Функции Python](./Unit4_Functions.md)
 
-# Функции Python
-- [Функции Python](./Unit5_Files.md)
+# Python Files
+- [Python Files](./Unit5_Files.md)
+
+# Comprehension
+- [Comprehension](./Unit6_Comprehension.md)
