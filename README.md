@@ -42,3 +42,10 @@ Python – это полноценный, универсальный, язык �
 
 # Comprehension
 - [Comprehension](./Unit6_Comprehension.md)
+
+# Modules
+- [Modules](./unit7_modules.md)
+
+# OOP
+- [OOP](./unit8_oop.md)
+
