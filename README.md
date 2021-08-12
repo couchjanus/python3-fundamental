@@ -52,4 +52,7 @@ Python – это полноценный, универсальный, язык �
 # Decorators
 - [Decorators](./unit9_decorator.md)
 
+# Exceptions
+- [Exceptions](./unit10_exception.md)
+
 
